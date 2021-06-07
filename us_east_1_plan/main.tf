@@ -23,7 +23,7 @@ provider "aws" {
 resource "aws_vpc" "example" {
   cidr_block = "10.0.0.0/16"
   tags = {
-  owner = "gilberto@hashicorp.com"
-}
+    owner = "gilberto@hashicorp.com"
+  }
 }
 
