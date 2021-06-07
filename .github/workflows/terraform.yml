@@ -7,7 +7,7 @@ on:
   pull_request:
 
 jobs:
-  terraform:
+  terraform1:
     name: "us_east_1_plan"
     runs-on: ubuntu-latest
     env:
@@ -75,7 +75,7 @@ jobs:
         run: terraform apply -auto-approve
         working-directory: ${{env.working-directory}}
 
-  terraform:
+  terraform2:
     name: "us_west_1_plan"
     runs-on: ubuntu-latest
     env:
