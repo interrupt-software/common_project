@@ -5,6 +5,13 @@ terraform {
       version = "~> 3.0"
     }
   }
+  backend "remote" {
+    organization = "interrupt-software"
+
+    workspaces {
+      name = "pbmm_us_east_1_plan"
+    }
+  }
 }
 
 # Configure the AWS Provider
