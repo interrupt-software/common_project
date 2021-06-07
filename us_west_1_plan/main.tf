@@ -14,6 +14,13 @@ terraform {
   }
 }
 
+//--------------------------------------------------------------------
+// Modules
+module "randomer" {
+  source  = "app.terraform.io/interrupt-software/randomer/provider"
+  version = "1.0.0"
+}
+
 # Configure the AWS Provider
 provider "aws" {
   region = "us-west-1"
@@ -24,3 +31,12 @@ resource "aws_vpc" "example" {
   cidr_block = "10.0.0.0/16"
 }
 
+output "random_pet" {
+  description = "A random pet name for you"
+  value       = module.randomer.pet
+}
+
+output "random_uuid" {
+  description = "A random pet name for you"
+  value       = module.randomer.uuid
+}
