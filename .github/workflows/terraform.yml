@@ -37,7 +37,7 @@ jobs:
         if: github.event_name == 'pull_request'
         run: terraform plan -no-color
         working-directory: ${{env.working-directory}}
-        continue-on-error: true
+        continue-on-error: false
 
       - uses: actions/github-script@0.9.0
         if: github.event_name == 'pull_request'
