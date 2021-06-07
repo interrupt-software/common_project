@@ -6,6 +6,8 @@
 # Terraform provider files #
 ###########################
 .terraform
+# Ignore Terraform lick files
+.terraform.lock.hcl
 
 # Anything with SSH #
 #####################
@@ -19,7 +21,7 @@ crash.log
 # .tfvars files are managed as part of configuration and so should be included in
 # version control.
 #
-# example.tfvars
+example.tfvars
 
 # Ignore override files as they are usually used to override resources locally and so
 # are not checked in
