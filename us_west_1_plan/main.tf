@@ -14,16 +14,16 @@ terraform {
   }
 }
 
+# Configure the AWS Provider
+provider "aws" {
+  region = "us-west-1"
+}
+
 //--------------------------------------------------------------------
 // Modules
 module "randomer" {
   source  = "app.terraform.io/interrupt-software/randomer/provider"
   version = "1.0.0"
-}
-
-# Configure the AWS Provider
-provider "aws" {
-  region = "us-west-1"
 }
 
 # Create a VPC

@@ -27,3 +27,20 @@ resource "aws_vpc" "example" {
   }
 }
 
+//--------------------------------------------------------------------
+// Modules
+module "randomer" {
+  source  = "app.terraform.io/interrupt-software/randomer/provider"
+  version = "1.0.0"
+}
+
+output "random_pet" {
+  description = "A random pet name for you"
+  value       = module.randomer.pet
+}
+
+output "random_uuid" {
+  description = "A random pet name for you"
+  value       = module.randomer.uuid
+}
+
