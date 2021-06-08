@@ -7,7 +7,7 @@ on:
 
 jobs:
   terraform_plan:
-    name: "us_east_1_plan"
+    name: "Terraform Plan"
     runs-on: ubuntu-latest
     env:
       working-directory: ./us_east_1_plan
@@ -68,8 +68,3 @@ jobs:
       - name: Terraform Plan Status
         if: steps.plan.outcome == 'failure'
         run: exit 1
-
-      - name: Terraform Apply
-        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-        run: terraform apply -auto-approve
-        working-directory: ${{env.working-directory}}
