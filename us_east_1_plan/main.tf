@@ -35,12 +35,12 @@ module "randomer" {
 }
 
 output "random_pet" {
-  description = "A random pet name for you"
+  description = "A random pet name for you."
   value       = module.randomer.pet
 }
 
 output "random_uuid" {
-  description = "A random pet name for you"
+  description = "A random pet name for you."
   value       = module.randomer.uuid
 }
 
